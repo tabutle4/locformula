@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Proposal | Loc Formula × CJE Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --cream: #faf9f7;
+            --gold: #c9a227;
+            --gold-light: #e8d48a;
+            --gold-dark: #a07f1c;
+            --gray: #6b6b6b;
+            --gray-light: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 3px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--black);
+            letter-spacing: 0.05em;
+        }
+
+        .nav-logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, var(--cream) 100%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .hero-title span {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--gray);
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-light);
+        }
+
+        .hero-meta-item {
+            text-align: center;
+        }
+
+        .hero-meta-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-meta-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--black);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-dark {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .section-cream {
+            background: var(--cream);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-title span {
+            font-style: italic;
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: var(--gray);
+            max-width: 600px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .section-dark .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Problem Section */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 4rem;
+            align-items: center;
+        }
+
+        .problem-list {
+            list-style: none;
+        }
+
+        .problem-list li {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--gray-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .problem-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .problem-text {
+            font-size: 0.95rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .problem-text strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+
+        .problem-visual {
+            background: var(--cream);
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid var(--gray-light);
+        }
+
+        .problem-visual-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--black);
+        }
+
+        .current-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .flow-item {
+            padding: 0.75rem 1.25rem;
+            background: var(--white);
+            border: 1px solid var(--gray-light);
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .flow-arrow {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .flow-item.bad {
+            background: #fff5f5;
+            border-color: #e8c4c4;
+            color: #8b4444;
+        }
+
+        .flow-item.good {
+            background: #f5faf5;
+            border-color: #c4e8c4;
+            color: #448b44;
+        }
+
+        /* Solution Section */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .solution-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .solution-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .solution-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .solution-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .solution-card p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+
+        /* Deliverables Section */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .deliverable-card {
+            background: var(--white);
+            border: 1px solid var(--gray-light);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .deliverable-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .deliverable-card.featured {
+            grid-column: span 2;
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+
+        .deliverable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .deliverable-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .deliverable-tag {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.4rem 0.8rem;
+            background: var(--cream);
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .deliverable-card.featured .deliverable-tag {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .deliverable-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .deliverable-list li {
+            font-size: 0.85rem;
+            color: var(--gray);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .deliverable-card.featured .deliverable-list li {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .deliverable-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        /* Investment Section */
+        .investment-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 4rem;
+            align-items: start;
+        }
+
+        .investment-breakdown {
+            background: var(--cream);
+            padding: 2.5rem;
+            border: 1px solid var(--gray-light);
+        }
+
+        .investment-breakdown h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--black);
+        }
+
+        .investment-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-light);
+            font-size: 0.9rem;
+        }
+
+        .investment-line:last-of-type {
+            border-bottom: none;
+        }
+
+        .investment-line .label {
+            color: var(--gray);
+        }
+
+        .investment-line .price {
+            font-weight: 500;
+            color: var(--black);
+        }
+
+        .investment-total {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--black);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .investment-total .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gray);
+        }
+
+        .investment-total .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--black);
+        }
+
+        .investment-total .price.strike {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+
+        .friends-price {
+            background: var(--gold);
+            color: var(--black);
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .friends-price .label {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .friends-price .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        /* Service Selector */
+        .service-selector {
+            background: var(--white);
+            border: 1px solid var(--gray-light);
+            padding: 2.5rem;
+        }
+
+        .service-selector h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .selector-subtitle {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .selector-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .selector-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--cream);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .selector-option:hover {
+            border-color: var(--gold-light);
+        }
+
+        .selector-option input {
+            display: none;
+        }
+
+        .option-check {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: transparent;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .selector-option input:checked ~ .option-check {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--black);
+        }
+
+        .selector-option input:checked ~ .option-details .option-name {
+            color: var(--black);
+            font-weight: 500;
+        }
+
+        .option-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1;
+        }
+
+        .option-name {
+            font-size: 0.9rem;
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+
+        .option-price {
+            font-weight: 500;
+            color: var(--black);
+            font-size: 0.9rem;
+        }
+
+        .selector-total {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--black);
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .total-row .label {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .total-row .value {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--black);
+        }
+
+        .total-row.main .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .total-row.main .value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--gold-dark);
+        }
+
+        .deposit-row {
+            background: var(--gold);
+            margin: 1.5rem -1.25rem -1.25rem;
+            padding: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .deposit-row .label {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--black);
+        }
+
+        .deposit-row .value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 1.25rem 2rem;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--black);
+        }
+
+        .cta-button:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .cta-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        .deposit-instruction {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--black);
+        }
+
+        .deposit-instruction strong {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--gold-dark);
+        }
+
+        .addon-divider {
+            text-align: center;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .addon-divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: var(--gray-light);
+        }
+
+        .addon-divider span {
+            background: var(--white);
+            padding: 0 1rem;
+            position: relative;
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .selector-option.addon {
+            background: var(--white);
+            border: 1px solid var(--gold-light);
+        }
+
+        .selector-option.addon:hover {
+            border-color: var(--gold);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: var(--gold);
+        }
+
+        .timeline-item {
+            padding-left: 3rem;
+            padding-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 11px;
+            height: 11px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .timeline-week {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+
+        .timeline-desc {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--gold);
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+
+        .footer-contact a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+
+            .problem-grid,
+            .investment-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .deliverable-card.featured {
+                grid-column: span 1;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">Loc Formula <span>×</span> CJE Media</div>
+        <div class="nav-links">
+            <a href="#problem">The Vision</a>
+            <a href="#solution">The Solution</a>
+            <a href="#deliverables">Deliverables</a>
+            <a href="#investment">Investment</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">Website Transformation Proposal</div>
+            <h1 class="hero-title">Elevate Your <span>Brand</span> Experience</h1>
+            <p class="hero-subtitle">A comprehensive website refresh that tells your story, showcases your craft, and seamlessly converts visitors into booked clients.</p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <div class="hero-meta-label">Prepared For</div>
+                    <div class="hero-meta-value">Venisha & Torre</div>
+                </div>
+                <div class="hero-meta-item">
+                    <div class="hero-meta-label">Date</div>
+                    <div class="hero-meta-value">January 2026</div>
+                </div>
+                <div class="hero-meta-item">
+                    <div class="hero-meta-label">Timeline</div>
+                    <div class="hero-meta-value">3 Weeks</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="problem">
+        <div class="container">
+            <div class="section-label">The Vision</div>
+            <h2 class="section-title">Where we're <span>going</span></h2>
+            <p class="section-subtitle">You've built something special — 15+ years of combined experience, a signature product line, and a loyal client base. Let's create a website that matches that energy.</p>
+
+            <div class="problem-grid">
+                <ul class="problem-list">
+                    <li>
+                        <span class="problem-icon">1</span>
+                        <span class="problem-text"><strong>Tell your story.</strong> Let visitors experience the expertise and passion behind Loc Formula from the moment they land.</span>
+                    </li>
+                    <li>
+                        <span class="problem-icon">2</span>
+                        <span class="problem-text"><strong>Seamless booking.</strong> Customers can browse, choose their loctician, and book — all without ever leaving your site.</span>
+                    </li>
+                    <li>
+                        <span class="problem-icon">3</span>
+                        <span class="problem-text"><strong>Showcase your work.</strong> A gallery that highlights your transformations and builds trust before they even book.</span>
+                    </li>
+                    <li>
+                        <span class="problem-icon">4</span>
+                        <span class="problem-text"><strong>Connect product & service.</strong> Show customers why buying from the same experts who do their locs just makes sense.</span>
+                    </li>
+                </ul>
+
+                <div class="problem-visual">
+                    <div class="problem-visual-title">The New Customer Journey</div>
+                    <div class="current-flow">
+                        <span class="flow-item">Discover You</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-item">Learn Your Story</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-item">See Your Work</span>
+                        <span class="flow-arrow">→</span>
+                        <span class="flow-item good">Book & Buy ✓</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section-dark" id="solution">
+        <div class="container">
+            <div class="section-label">The Solution</div>
+            <h2 class="section-title">One seamless <span>experience</span></h2>
+            <p class="section-subtitle">We'll transform your Shopify site into a complete brand destination — where customers learn your story, see your work, and book without ever leaving.</p>
+
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-number">01</div>
+                    <h3>Tell Your Story</h3>
+                    <p>A homepage that showcases who you are, what you do, and why it matters. From the Southside roots to the signature formula.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">02</div>
+                    <h3>Showcase Your Craft</h3>
+                    <p>A gallery of your work, services with pricing, and team profiles that build trust before they even book.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">03</div>
+                    <h3>Seamless Booking</h3>
+                    <p>Vagaro embedded directly into your site. Customers pick a service, choose their loctician, and book — all without leaving.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables Section -->
+    <section class="section-cream" id="deliverables">
+        <div class="container">
+            <div class="section-label">What You Get</div>
+            <h2 class="section-title">Complete <span>deliverables</span></h2>
+            <p class="section-subtitle">Everything needed to transform your online presence into a booking machine.</p>
+
+            <div class="deliverables-grid">
+                <div class="deliverable-card featured">
+                    <div class="deliverable-header">
+                        <span class="deliverable-title">Homepage Rebuild</span>
+                        <span class="deliverable-tag">8 Sections</span>
+                    </div>
+                    <ul class="deliverable-list">
+                        <li>Hero with product/texture imagery & strong headline</li>
+                        <li>"The Formula" — why your products + services work together</li>
+                        <li>Services overview with pricing & embedded Book buttons</li>
+                        <li>Gallery showcasing your loc work & transformations</li>
+                        <li>Meet the Team — Venisha & Torre with individual booking links</li>
+                        <li>Testimonials section for social proof</li>
+                        <li>Shop feature highlighting your 3 products</li>
+                        <li>Footer with contact, hours, location</li>
+                    </ul>
+                </div>
+
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <span class="deliverable-title">About Page</span>
+                        <span class="deliverable-tag">New</span>
+                    </div>
+                    <ul class="deliverable-list">
+                        <li>Your full brand story</li>
+                        <li>Southside Chicago roots</li>
+                        <li>Combined 15+ years experience</li>
+                        <li>Personal photos (this is where faces live)</li>
+                    </ul>
+                </div>
+
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <span class="deliverable-title">Book Page</span>
+                        <span class="deliverable-tag">Integrated</span>
+                    </div>
+                    <ul class="deliverable-list">
+                        <li>Full Vagaro widget embedded on-site</li>
+                        <li>Services, staff picker, calendar inline</li>
+                        <li>Customer never leaves your website</li>
+                        <li>Staff-specific booking links</li>
+                    </ul>
+                </div>
+
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <span class="deliverable-title">Product Pages</span>
+                        <span class="deliverable-tag">3 Products</span>
+                    </div>
+                    <ul class="deliverable-list">
+                        <li>Enhanced descriptions</li>
+                        <li>"Made by locticians" messaging</li>
+                        <li>Cross-sell with "Book a Service" CTA</li>
+                        <li>Connect products to your expertise</li>
+                    </ul>
+                </div>
+
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <span class="deliverable-title">Before Booking</span>
+                        <span class="deliverable-tag">Cleanup</span>
+                    </div>
+                    <ul class="deliverable-list">
+                        <li>Keep policies & important info</li>
+                        <li>Remove/replace personal photo</li>
+                        <li>Clean formatting</li>
+                        <li>Better user experience</li>
+                    </ul>
+                </div>
+
+                <div class="deliverable-card">
+                    <div class="deliverable-header">
+                        <span class="deliverable-title">Vagaro Integration</span>
+                        <span class="deliverable-tag">Seamless</span>
+                    </div>
+                    <ul class="deliverable-list">
+                        <li>Embedded booking widget</li>
+                        <li>Book with Venisha link</li>
+                        <li>Book with Torre link</li>
+                        <li>Services displayed on website</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section id="investment">
+        <div class="container">
+            <div class="section-label">Investment</div>
+            <h2 class="section-title">Choose your <span>package</span></h2>
+            <p class="section-subtitle">Select the services you need. The full package is recommended for the complete transformation.</p>
+
+            <div class="investment-wrapper">
+                <div class="investment-breakdown">
+                    <h3>Project Breakdown</h3>
+                    <div class="investment-line">
+                        <span class="label">Homepage Rebuild (8 sections)</span>
+                        <span class="price">$400</span>
+                    </div>
+                    <div class="investment-line">
+                        <span class="label">About Page</span>
+                        <span class="price">$75</span>
+                    </div>
+                    <div class="investment-line">
+                        <span class="label">Book Page + Vagaro Integration</span>
+                        <span class="price">$150</span>
+                    </div>
+                    <div class="investment-line">
+                        <span class="label">Product Page Updates (3)</span>
+                        <span class="price">$75</span>
+                    </div>
+                    <div class="investment-line">
+                        <span class="label">Before Booking Cleanup</span>
+                        <span class="price">$50</span>
+                    </div>
+                    <div class="investment-total">
+                        <span class="label">Total Value</span>
+                        <span><span class="price strike">$750</span></span>
+                    </div>
+                    <div class="friends-price">
+                        <div class="label">Bundle Rate</div>
+                        <div class="price">$650</div>
+                    </div>
+                </div>
+
+                <div class="service-selector">
+                    <h3>Select Your Services</h3>
+                    <p class="selector-subtitle">Choose what you need, or select the full package for the best value.</p>
+
+                    <div class="selector-options">
+                        <label class="selector-option">
+                            <input type="checkbox" id="fullPackage" value="650" data-name="Full Package (Bundle)">
+                            <span class="option-check">✓</span>
+                            <span class="option-details">
+                                <span class="option-name">Full Package (Recommended)</span>
+                                <span class="option-price">$650</span>
+                            </span>
+                        </label>
+
+                        <label class="selector-option">
+                            <input type="checkbox" id="homepage" value="400" data-name="Homepage Rebuild">
+                            <span class="option-check">✓</span>
+                            <span class="option-details">
+                                <span class="option-name">Homepage Rebuild</span>
+                                <span class="option-price">$400</span>
+                            </span>
+                        </label>
+
+                        <label class="selector-option">
+                            <input type="checkbox" id="about" value="75" data-name="About Page">
+                            <span class="option-check">✓</span>
+                            <span class="option-details">
+                                <span class="option-name">About Page</span>
+                                <span class="option-price">$75</span>
+                            </span>
+                        </label>
+
+                        <label class="selector-option">
+                            <input type="checkbox" id="booking" value="150" data-name="Book Page + Vagaro">
+                            <span class="option-check">✓</span>
+                            <span class="option-details">
+                                <span class="option-name">Book Page + Vagaro Integration</span>
+                                <span class="option-price">$150</span>
+                            </span>
+                        </label>
+
+                        <label class="selector-option">
+                            <input type="checkbox" id="products" value="75" data-name="Product Pages">
+                            <span class="option-check">✓</span>
+                            <span class="option-details">
+                                <span class="option-name">Product Page Updates</span>
+                                <span class="option-price">$75</span>
+                            </span>
+                        </label>
+
+                        <label class="selector-option">
+                            <input type="checkbox" id="beforeBooking" value="50" data-name="Before Booking Cleanup">
+                            <span class="option-check">✓</span>
+                            <span class="option-details">
+                                <span class="option-name">Before Booking Cleanup</span>
+                                <span class="option-price">$50</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="addon-divider">
+                        <span>Optional Add-Ons</span>
+                    </div>
+
+                    <div class="selector-options">
+                        <label class="selector-option addon">
+                            <input type="checkbox" id="branding" value="300" data-name="Branding Strategy">
+                            <span class="option-check">✓</span>
+                            <span class="option-details">
+                                <span class="option-name">One-Time Branding Strategy</span>
+                                <span class="option-price">$300</span>
+                            </span>
+                        </label>
+
+                        <label class="selector-option addon">
+                            <input type="checkbox" id="contentCalendar" value="350" data-name="Content Calendar (First Month)">
+                            <span class="option-check">✓</span>
+                            <span class="option-details">
+                                <span class="option-name">Monthly Content Calendar</span>
+                                <span class="option-price">$350/mo</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="selector-total">
+                        <div class="total-row main">
+                            <span class="label">Your Total</span>
+                            <span class="value" id="totalPrice">$0</span>
+                        </div>
+                        <div class="deposit-row">
+                            <span class="label">50% Deposit Due</span>
+                            <span class="value" id="depositAmount">$0</span>
+                        </div>
+                    </div>
+
+                    <a href="https://buy.stripe.com/3cIfZgbky7qH0Oy7lW9R600" target="_blank" class="cta-button" id="payButton">Pay Deposit to Begin</a>
+                    <p class="deposit-instruction">Enter your deposit amount: <strong id="depositNote">$0</strong></p>
+                    <p class="cta-note">Questions? Email <strong>media@ciarajevans.com</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section-cream">
+        <div class="container">
+            <div class="section-label">Timeline</div>
+            <h2 class="section-title">How we'll <span>work</span></h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 1</div>
+                    <div class="timeline-title">Discovery & Foundation</div>
+                    <div class="timeline-desc">Gather assets, finalize content direction, begin homepage structure and About page.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 2</div>
+                    <div class="timeline-title">Build & Integrate</div>
+                    <div class="timeline-desc">Complete homepage sections, Vagaro widget integration, Book page setup, product page updates.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-week">Week 3</div>
+                    <div class="timeline-title">Polish & Launch</div>
+                    <div class="timeline-desc">Before Booking cleanup, final revisions, testing, and launch. 2 rounds of revisions included.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">CJE <span>Media</span></div>
+        <p class="footer-text">Tech Solutions for Growing Brands</p>
+        <p class="footer-contact">
+            <a href="mailto:media@ciarajevans.com">media@ciarajevans.com</a>
+        </p>
+    </footer>
+
+    <script>
+        // Service selector logic
+        const fullPackage = document.getElementById('fullPackage');
+        const individualServices = ['homepage', 'about', 'booking', 'products', 'beforeBooking'];
+        const addons = ['branding', 'contentCalendar'];
+        const totalDisplay = document.getElementById('totalPrice');
+        const depositDisplay = document.getElementById('depositAmount');
+        const depositNote = document.getElementById('depositNote');
+
+        function calculateTotal() {
+            let total = 0;
+            
+            if (fullPackage.checked) {
+                total = 650;
+                // Disable individual options when full package selected
+                individualServices.forEach(id => {
+                    document.getElementById(id).checked = false;
+                    document.getElementById(id).parentElement.style.opacity = '0.5';
+                    document.getElementById(id).parentElement.style.pointerEvents = 'none';
+                });
+            } else {
+                // Enable individual options
+                individualServices.forEach(id => {
+                    document.getElementById(id).parentElement.style.opacity = '1';
+                    document.getElementById(id).parentElement.style.pointerEvents = 'auto';
+                    if (document.getElementById(id).checked) {
+                        total += parseInt(document.getElementById(id).value);
+                    }
+                });
+            }
+
+            // Always add add-ons to total
+            addons.forEach(id => {
+                if (document.getElementById(id).checked) {
+                    total += parseInt(document.getElementById(id).value);
+                }
+            });
+
+            const deposit = Math.ceil(total / 2);
+            totalDisplay.textContent = '$' + total;
+            depositDisplay.textContent = '$' + deposit;
+            depositNote.textContent = '$' + deposit;
+        }
+
+        // Add event listeners
+        fullPackage.addEventListener('change', calculateTotal);
+        individualServices.forEach(id => {
+            document.getElementById(id).addEventListener('change', function() {
+                if (this.checked) {
+                    fullPackage.checked = false;
+                    fullPackage.parentElement.style.opacity = '1';
+                    fullPackage.parentElement.style.pointerEvents = 'auto';
+                }
+                calculateTotal();
+            });
+        });
+        addons.forEach(id => {
+            document.getElementById(id).addEventListener('change', calculateTotal);
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.length > 1) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.solution-card, .deliverable-card, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
